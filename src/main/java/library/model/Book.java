@@ -2,12 +2,14 @@ package library.model;
 
 import java.util.Objects;
 
+// Класс, представляющий книгу
 public class Book implements Comparable<Book> {
-    private String title;
-    private String author;
-    private int numberOfPages;
-    private int publicationYear;
+    private String title; // Название книги
+    private String author; // Автор книги
+    private int numberOfPages; // Количество страниц
+    private int publicationYear; // Год публикации
 
+    // Конструктор
     public Book(String title, String author, int numberOfPages, int publicationYear) {
         this.title = title;
         this.author = author;
@@ -15,6 +17,7 @@ public class Book implements Comparable<Book> {
         this.publicationYear = publicationYear;
     }
 
+    // Геттеры
     public String getTitle() {
         return title;
     }
@@ -31,16 +34,20 @@ public class Book implements Comparable<Book> {
         return publicationYear;
     }
 
+    // Реализация compareTo для сортировки по количеству страниц (Требование 4)
     @Override
     public int compareTo(Book other) {
+        // Сравниваем количество страниц текущей книги с другой книгой
         return Integer.compare(this.numberOfPages, other.numberOfPages);
     }
 
+    // Переопределение equals и hashCode для корректной работы distinct() (Требование 5)
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
+        // Книги считаются равными, если совпадают название и автор
         return Objects.equals(title, book.title) && Objects.equals(author, book.author);
     }
 
@@ -49,6 +56,7 @@ public class Book implements Comparable<Book> {
         return Objects.hash(title, author);
     }
 
+    // Переопределение toString для удобного вывода в консоль (Требование 1 для студента, косвенно для книги)
     @Override
     public String toString() {
         return "Book{" +
