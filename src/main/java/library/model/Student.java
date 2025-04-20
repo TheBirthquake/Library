@@ -5,7 +5,7 @@ import java.util.List;
 // Класс, представляющий студента
 public class Student {
     private String name; // Имя студента
-    private List<Book> books; // Список книг у студента (Обязательное поле, Требование 2)
+    private List<Book> books; // Список книг у студента
 
     // Конструктор
     public Student(String name, List<Book> books) {
@@ -22,7 +22,7 @@ public class Student {
         return books;
     }
 
-    // Переопределение toString для удобного вывода информации о студенте (Требование 1)
+    // Переопределение toString для удобного вывода информации о студенте
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

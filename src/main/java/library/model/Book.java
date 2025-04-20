@@ -34,14 +34,14 @@ public class Book implements Comparable<Book> {
         return publicationYear;
     }
 
-    // Реализация compareTo для сортировки по количеству страниц (Требование 4)
+    // Реализация compareTo для сортировки по количеству страниц
     @Override
     public int compareTo(Book other) {
         // Сравниваем количество страниц текущей книги с другой книгой
         return Integer.compare(this.numberOfPages, other.numberOfPages);
     }
 
-    // Переопределение equals и hashCode для корректной работы distinct() (Требование 5)
+    // Переопределение equals и hashCode для корректной работы distinct()
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -56,7 +56,7 @@ public class Book implements Comparable<Book> {
         return Objects.hash(title, author);
     }
 
-    // Переопределение toString для удобного вывода в консоль (Требование 1 для студента, косвенно для книги)
+    // Переопределение toString для удобного вывода в консоль
     @Override
     public String toString() {
         return "Book{" +
