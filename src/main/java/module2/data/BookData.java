@@ -1,6 +1,6 @@
-package library.data;
+package module2.data;
 
-import library.model.Book;
+import module2.model.Book;
 
 import java.util.Arrays;
 import java.util.List;

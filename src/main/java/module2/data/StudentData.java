@@ -1,7 +1,7 @@
-package library.data;
+package module2.data;
 
-import library.model.Book;
-import library.model.Student;
+import module2.model.Book;
+import module2.model.Student;
 
 import java.util.ArrayList;
 import java.util.Arrays;

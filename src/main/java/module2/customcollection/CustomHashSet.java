@@ -1,4 +1,4 @@
-package library.customcollection;
+package module2.customcollection;
 
 import java.util.ArrayList;
 import java.util.List;

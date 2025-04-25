@@ -1,10 +1,9 @@
-package library;
+package module2;
 
-import library.model.Book;
-import library.model.Student;
-import library.data.StudentData;
+import module2.model.Book;
+import module2.model.Student;
+import module2.data.StudentData;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional; // Импортируем Optional
 
