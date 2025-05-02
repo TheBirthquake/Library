@@ -3,14 +3,11 @@ package module4.livelockexample;
 public class LivelockMain {
 
     public static void main(String[] args) {
-        // Create the diners
-        final Diner alphonse = new Diner("Alphonse");
-        final Diner gaston = new Diner("Gaston");
+        final Diner alphonse = new Diner("Альфонзо");
+        final Diner gaston = new Diner("Гастон");
 
-        // Create the shared spoon, initially owned by Alphonse
         final Spoon spoon = new Spoon(alphonse);
 
-        // Create threads for each diner
         Thread alphonseThread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -25,11 +22,9 @@ public class LivelockMain {
             }
         });
 
-        // Start the threads
         alphonseThread.start();
         gastonThread.start();
 
-        // The program will likely run indefinitely in a livelock
-        System.out.println("Main thread finished. Livelock scenario started.");
+        System.out.println("Основной поток завершён. Запущен сценарий Livelock.");
     }
 }

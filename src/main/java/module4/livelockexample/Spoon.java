@@ -15,8 +15,7 @@ public class Spoon {
         this.owner = owner;
     }
 
-    // Method to use the spoon
     public synchronized void use() {
-        System.out.println(owner.getName() + " is eating.");
+        System.out.println(owner.getName() + " сейчас ест.");
     }
 }

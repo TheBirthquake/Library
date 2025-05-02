@@ -11,23 +11,19 @@ public class ThreadOne extends Thread {
 
     @Override
     public void run() {
-        // Synchronize on resourceA first
         synchronized (resourceA) {
-            System.out.println("Thread One: Acquired " + resourceA.getName());
+            System.out.println("Поток 1: Заполучен " + resourceA.getName());
 
-            // Introduce a small delay to increase the chance of deadlock
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
-            // Then try to acquire resourceB
             synchronized (resourceB) {
-                System.out.println("Thread One: Acquired " + resourceB.getName());
-                // Perform operations with both resources
-                System.out.println("Thread One: Performing action with both resources.");
-            } // resourceB lock released
-        } // resourceA lock released
+                System.out.println("Поток 1: Заполучен " + resourceB.getName());
+                System.out.println("Поток 1: Произведение действия с обоими ресурсами.");
+            }
+        }
     }
 }
